@@ -14,9 +14,10 @@ def main():
     plik_wejsciowy = arg.plik_wejsciowy
     plik_wyjsciowy = arg.plik_wyjsciowy
 
-    if plik_wejsciowy.endswith('.json'):
+    if plik_wejsciowy.endswith('.json') and plik_wyjsciowy.endswith('.json'):
         dane = nIT_json.jsonek(plik_wejsciowy)
-        print(dane)
+        nIT_json.save_jsonek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
     else:
         print(f"Niewlasciwy format pliku: {plik_wejsciowy}")
 
