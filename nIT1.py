@@ -19,21 +19,38 @@ def main():
         dane = nIT_json.jsonek(plik_wejsciowy)
         nIT_json.save_jsonek(dane, plik_wyjsciowy)
         print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
-    elif plik_wejsciowy.endswith('.yml') and plik_wyjsciowy.endwith('.yml'):
+    elif plik_wejsciowy.endswith('.yml') and plik_wyjsciowy.endswith('.yml'):
         dane = nIT_yaml.yamlek(plik_wejsciowy)
         nIT_yaml.save_yamlek(dane, plik_wyjsciowy)
         print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
-    elif plik_wejsciowy.endswith('.yml') and plik_wyjsciowy.endwith('.json'):
+    elif plik_wejsciowy.endswith('.xml') and plik_wyjsciowy.endswith('.xml'):
+        dane = nIT_xml.xmlek(plik_wejsciowy)
+        nIT_xml.save_xmlek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
+    elif plik_wejsciowy.endswith('.yml') and plik_wyjsciowy.endswith('.json'):
         dane = nIT_yaml.yamlek(plik_wejsciowy)
         nIT_json.save_jsonek(dane, plik_wyjsciowy)
         print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
-    elif plik_wejsciowy.endswith('.json') and plik_wyjsciowy.endwith('.yml'):
+    elif plik_wejsciowy.endswith('.yml') and plik_wyjsciowy.endswith('.xml'):
+        dane = nIT_yaml.yamlek(plik_wejsciowy)
+        nIT_xml.save_xmlek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
+    elif plik_wejsciowy.endswith('.json') and plik_wyjsciowy.endswith('.yml'):
         dane = nIT_json.jsonek(plik_wejsciowy)
         nIT_yaml.save_yamlek(dane, plik_wyjsciowy)
         print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
-    elif plik_wejsciowy.endswith('.xml'):
+    elif plik_wejsciowy.endswith('.json') and plik_wyjsciowy.endswith('.xml'):
+        dane = nIT_json.jsonek(plik_wejsciowy)
+        nIT_xml.save_xmlek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
+    elif plik_wejsciowy.endswith('.xml') and plik_wyjsciowy.endswith('.json'):
         dane = nIT_xml.xmlek(plik_wejsciowy)
-        print(dane)
+        nIT_json.save_jsonek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
+    elif plik_wejsciowy.endswith('.xml') and plik_wyjsciowy.endswith('.yml'):
+        dane = nIT_xml.xmlek(plik_wejsciowy)
+        nIT_yaml.save_yamlek(dane, plik_wyjsciowy)
+        print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
     else:
         print(f"Niewlasciwy format pliku: {plik_wejsciowy}")
 
