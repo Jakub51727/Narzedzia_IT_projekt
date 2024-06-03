@@ -6,6 +6,7 @@ def jsonek(json_file):
         dane = json.load(f)
     return dane
 
+
 def save_jsonek(dane, json_file):
     with open(json_file, 'w') as f:
         json.dump(dane, f, indent=4)
