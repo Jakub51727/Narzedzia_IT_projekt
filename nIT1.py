@@ -1,5 +1,5 @@
 import argparse
-from konwerter import nIT_json
+from konwerter import nIT_json, nIT_yaml
 
 def parsowanie_arg():
     pars = argparse.ArgumentParser(description='Konwersja danych miedzy formatami .xml; .json; .yaml')
@@ -18,6 +18,9 @@ def main():
         dane = nIT_json.jsonek(plik_wejsciowy)
         nIT_json.save_jsonek(dane, plik_wyjsciowy)
         print(f"dokonano konwersji {plik_wejsciowy} do {plik_wyjsciowy}")
+    elif plik_wejsciowy.endswith('.yml'):
+        dane = nIT_yaml.yamlek(plik_wejsciowy)
+        print(dane)
     else:
         print(f"Niewlasciwy format pliku: {plik_wejsciowy}")
 
